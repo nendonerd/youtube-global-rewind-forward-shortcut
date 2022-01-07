@@ -1,0 +1,29 @@
+{
+    "name": "youtube-global-rewind-forward-shortcut",
+    "description": "Use media keys to control youtube playback even when the browser window is not in focus",
+    "version": "1.0",
+    "manifest_version": 3,
+    "commands": {
+		"playPause": {
+			"suggested_key": { "default": "MediaPlayPause" },
+			"global": true,
+			"description": "Toggle play/pause"
+		},
+		"forward": {
+            "suggested_key": { "default": "MediaNextTrack" },
+			"global": true,
+			"description": "Forward"
+        },
+		"rewind": {
+            "suggested_key": { "default": "MediaPrevTrack" },
+			"global": true,
+			"description": "Rewind"
+        }
+	},
+	"permissions": ["tabs", "scripting"],
+    "host_permissions": ["https://www.youtube.com/"],
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    }
+}
